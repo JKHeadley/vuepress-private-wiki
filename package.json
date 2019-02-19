@@ -1,0 +1,28 @@
+{
+  "name": "scotch-vuepress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^0.5.0"
+  },
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axios": "^0.18.0",
+    "change-case": "^3.1.0",
+    "lodash": "^4.17.11",
+    "querystring": "^0.2.0",
+    "validator": "^10.11.0",
+    "vuex": "^3.1.0",
+    "vuex-persistedstate": "^2.5.4",
+    "vuex-router-sync": "^5.0.0"
+  }
+}
