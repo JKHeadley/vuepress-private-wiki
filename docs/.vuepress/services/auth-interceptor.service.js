@@ -1,11 +1,15 @@
 import store from '../store'
-
+import globals from '../globals'
 import { RESPONSE_MESSAGES } from '../config'
 
 const internals = {}
 
 internals.responseError = function(error) {
   let response = error.response
+  const { vm } = globals
+
+
+  vm.$router.push('/')
 
   // var Notification = $injector.get('Notification');
 
@@ -24,9 +28,7 @@ internals.responseError = function(error) {
 
     store.dispatch('auth/clearAuth')
 
-    console.log("STORE:", store)
-
-    store.vm.$router.push('/')
+    vm.$router.push('/')
   } else if (response.status === 403) {
     // The user is unauthorized
     console.debug('authInterceptor.service: 403: response:', response)

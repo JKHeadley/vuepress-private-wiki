@@ -5,6 +5,7 @@ import config from './config'
 import axios from 'axios'
 import qs from 'querystring'
 import { sync } from 'vuex-router-sync'
+import { setGlobalVueInstance } from './globals'
 // import atob from 'atob'
 
 export default ({
@@ -51,21 +52,24 @@ export default ({
 
     authService.login({ email: 'test@user.com', password: 'root' })
     .then(result => {
-        console.log("LOGIN:", parseJwt(result.data.accessToken))
+        console.log("LOGIN:", result.data.accessToken)
     })
 
-    function parseJwt (token) {
-        // let workingAtob = window ? window.atob : atob;
-        // var base64Url = token.split('.')[1];
-        // var base64 = base64Url.replace('-', '+').replace('_', '/');
-        // return JSON.parse(workingAtob(base64));
-    };
 
-    store.setVue(new Vue({
-        router
+    // store.setVue(new Vue({
+    //     router
+    // }))
+
+    Vue.prototype.$store = store
+    // Object.defineProperty(Vue.prototype, '$store', { value: store, writable: false });
+
+    setGlobalVueInstance(new Vue({
+        router,
+        store
     }))
+
     console.log("VUE:", new Vue())
-    console.log("store:", store)
+    // console.log("store:", store)
 
     
   }

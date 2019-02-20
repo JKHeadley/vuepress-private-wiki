@@ -1,4 +1,5 @@
 import store from '../store'
+import globals from '../globals'
 import _ from 'lodash'
 
 import { httpClient as http } from '../services'

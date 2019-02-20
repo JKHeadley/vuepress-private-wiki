@@ -42,12 +42,16 @@
                 }
             },
             logout(){
-                authService.logout();
+                authService.logout()
+                .then(result => {
+                    console.log("STATE:", this.$store.state)
+                })
             },
             login(){
                 authService.login(this.loginCreds)
                 .then(result => {
                     console.log("LOGIN:", parseJwt(result.data.accessToken))
+                    console.log("STATE:", this.$store.state)
                 })
             }
         }
