@@ -20,7 +20,7 @@
     "change-case": "^3.1.0",
     "lodash": "^4.17.11",
     "querystring": "^0.2.0",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "vuex": "^3.1.0",
     "vuex-persistedstate": "^2.5.4",
     "vuex-router-sync": "^5.0.0"
